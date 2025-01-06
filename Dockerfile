@@ -82,6 +82,8 @@ COPY pg.conf.template /etc/barman/barman.d/pg.conf.template
 
 ENV PYTHONPATH: "${PYTHONPATH}:/opt/barman"
 
+RUN pip install boto3
+
 # Install barman exporter
 RUN pip install barman-exporter && mkdir /node_exporter
 VOLUME /node_exporter
